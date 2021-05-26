@@ -1,0 +1,23 @@
+
+.card-bg{
+    background-color:var(--main-bg);
+}
+.blog-title{
+color:#000;
+letter-spacing: 2px;
+font-weight: bold;
+}
+
+.blog-category,.blog-content{
+    margin-top:1.2rem;
+    color:gray;
+    line-height: 2rem;
+    text-align: justify;
+    letter-spacing: 2px;
+}
+
+/*buttons */
+.blog-button{
+    background-color: silver;
+    color:#FFF;
+}

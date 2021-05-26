@@ -1,0 +1,51 @@
+.blog_like_icon{
+    position:relative;
+    top:-.5rem;
+    left:-.8rem;
+    height: 38px;
+    width:38px;
+    font-size: 1.4rem !important;
+    line-height: 38px !important;
+    transition: all .5s ease-in-out;
+    margin:auto
+}
+
+.icon{
+    font-size: 120px;
+}
+.blog_like, .blog_visit{
+
+    border:1.4px solid #38236d38 !important;
+}
+.blog_visit{
+    width: 38px;
+    height: 38px;
+}
+
+.blog_likes{
+    font-weight: bold;
+    padding: .2rem;
+    margin:4px;
+}
+
+.card-bg{
+    background-color:var(--main-bg);
+}
+.blog-title{
+color:#000;
+letter-spacing: 2px;
+font-weight: bold;
+}
+
+.blog-category,.blog-content{
+    margin-top:1.2rem;
+    color:gray;
+    text-align: justify;
+    letter-spacing: 2px;
+}
+
+/*buttons */
+.blog-button{
+    background-color: silver;
+    color:#FFF;
+}

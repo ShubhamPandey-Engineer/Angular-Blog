@@ -1,0 +1,70 @@
+<app-status-alert  [alert]="alert" ></app-status-alert>
+<div class="container-fluid p-1">
+
+    <div class="create_form">
+        <div class="col-md-8 m-auto" id="create_blog_form">
+            <form method="POST" [formGroup]="updateBlogForm" (ngSubmit)="updateBlog()"
+                enctype="application/x-www-form-urlencoded">
+                <div class="row  justify-content-around">
+                    <div class="col-md-8 ">
+                        <div class=" form-group">
+                            <input formControlName="_id"  type="text" class="form-control d-none"
+                                placeholder="">
+                            <label for="blog_title" class="form-label"
+                                [class.label-error]="fC('title')?.invalid && fC('title')?.dirty">Blog
+                                Title</label>
+                            <input formControlName="title" #title name="title"
+                                [class.is-invalid]="fC('title')?.invalid && fC('title')?.dirty" type="text"
+                                id="blog_title" class="form-control" placeholder="">
+                            <small class="text-danger"
+                                *ngIf="fC('title')?.errors?.required && fC('title')?.dirty">Blog title is
+                                required</small>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class=" form-group">
+                            <label for="blog_category" class="form-label"
+                                [class.label-error]="fC('category')?.invalid && fC('category')?.dirty">Blog
+                                Category</label>
+                            <input formControlName="category" #category type="text"
+                                [class.is-invalid]="fC('category')?.invalid && fC('category')?.dirty"
+                                class="form-control" placeholder="">
+                            <small class="text-danger"
+                                *ngIf="fC('category')?.errors?.required && fC('category')?.dirty">Blog Category
+                                is required</small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class=" form-group ">
+                            <label for="blog_content" class="form-label"
+                                [class.label-error]="fC('content')?.invalid && fC('content')?.dirty">Blog
+                                Content</label>
+                            <textarea cols="6" #content id="blog_content" formControlName="content"
+                                class="form-control" rows="5"
+                                [class.is-invalid]="fC('content')?.invalid && fC('content')?.dirty"></textarea>
+                            <!--<input formControlName="blogContent" type="text" [class.is-invalid]="fC('blogContent')?.invalid && fC('blogContent')?.dirty"  class="form-control" placeholder="" >-->
+                            <div class="d-block" *ngIf="fC('content')?.invalid && fC('content')?.dirty">
+                                <small class="text-danger" *ngIf="fC('content')?.errors?.required">Blog Content is
+                                    required</small>
+                                <small class="text-danger" *ngIf="fC('content')?.errors?.minlength ">Content length
+                                    is too small</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class=" form-group text-center ">
+                            <button type="submit" class="btn blog-button btn-md p-2 blog-submit " name=""
+                                value="Update Blog" [disabled]="formStatus()">{{ (requestPending)?'Update':'' }}
+                                <div *ngIf="!requestPending" style="size:2rem" class="spinner-border p-0" role="status">
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

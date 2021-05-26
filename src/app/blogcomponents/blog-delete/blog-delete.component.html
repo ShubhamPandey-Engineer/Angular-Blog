@@ -1,0 +1,19 @@
+
+<button class="btn  btn-md blog-button m-2" (click)="triggerModal(modalData)">delete</button>
+<ng-template #modalData let-modal >
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Are you sure you want to delete</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <p>Blog with title  <strong> {{deleteBlog.title}} </strong> will be deleted.
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-danger"   (click)="DeleteBlog();modal.close('Save click')">Delete</button>
+    <button type="button" class="btn btn-light" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>

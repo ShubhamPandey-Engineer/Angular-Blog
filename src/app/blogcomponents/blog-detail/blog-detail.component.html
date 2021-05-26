@@ -1,0 +1,27 @@
+<div class="container-fluid p-0">
+
+      <!--  no blogs available-->
+      <div class="data-loader m-auto" *ngIf="! dataReceived else blog_available">
+        {{blogStatus}}
+    </div>
+    
+    <ng-template #blog_available>
+<div class="card col-md-12 m-auto "  >
+    <div class="card card-bg card       ">
+        <div class="card-header text-center ">
+        <div class="card-body p-2">
+        <label class="card-title  blog-title d-block text-center m-1 blog_category ">{{blog.title }}</label>
+        <label class="card-title  blog-category d-block text-center m-1 blog_category ">{{blog.category }}</label>
+        <hr>
+
+        <p class="blog-content ">
+            {{blog.content}}
+        </p>
+        </div>
+
+        </div></div>
+    </div>
+    </ng-template>
+        </div>
+
+

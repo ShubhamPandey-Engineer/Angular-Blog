@@ -1,1 +1,184 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+/*
+@import "~../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css" 
+*/
+
+:root{
+    --main-bg:#f6f8fa;
+    --bg-dark:#343a40;
+
+}
+
+.col-md-8{
+    margin-bottom: 2rem !important;
+}
+
+.form-group{
+    margin:1.3rem auto 0 auto;
+}
+.label-error{
+    font-weight: 600;
+    color:#dc3545!important;
+}
+
+.label-error::after{
+    content: "*";
+    position: absolute;
+}
+/*
+.form-control{
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-radius: 0;
+
+}*/
+.form-control:focus{
+    box-shadow: none;
+}
+.is-invalid:focus{
+    box-shadow: none !important;
+}
+
+.form-label{
+
+color:var(--bg-dark);
+}
+
+#create_blog_form{
+    border-radius: 15px;
+    box-shadow:  0 0 4px silver;
+}
+
+
+/*header */
+.page-header{
+    height:3rem;
+    background-color:var(--main-bg);
+    margin-bottom: 1.3rem;
+}
+.header-title{
+    color:#FFF;
+    font-size:  1.4rem ;
+    width:100%;
+    background-color: var(--bg-dark);
+    line-height: 3rem;
+    text-align: center;
+}
+
+/* loader */
+.data-loader{
+    border-radius: 100%;
+    width:100px;
+    height: 100px;
+    background-color: rgb(87, 154, 209);
+    font-weight: bolder;
+    font-weight: bolder;
+    color:#FFF;
+    letter-spacing: 2px;
+    line-height: 100px;
+    text-align: center;
+    animation: move_loader .2s infinite ease-in-out;
+    transition: all .4s ease-in-out;
+    position: relative;
+
+}
+
+.component-load{
+    height:6px;
+    width:0px;
+    background-color: slategrey;
+}
+.move-component-loader{
+    animation: move_component_loader .5s 1 ease-in-out;
+
+}
+
+
+@keyframes move_component_loader {
+    from{
+        transition: all .4s ease-in-out;
+
+    }
+    to{
+        transition: all .4s ease-in-out;
+        width:100%;
+
+    }
+    
+}
+
+
+@keyframes move_loader {
+    from{
+        transition: all .4s ease-in-out;
+
+    }
+    to{
+        transition: all .4s ease-in-out;
+
+        box-shadow: 0 0 10px black
+    }
+    
+}
+
+
+
+
+body{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+background-color:var(--main-bg);
+}
+
+
+/* blog styling -------------------------*/
+.blog-label{
+    text-align: center;
+    font-weight: bolder;
+}
+
+.card-bg{
+    background-color:var(--main-bg);
+}
+.blog-title{
+color:#000;
+letter-spacing: 2px;
+font-weight: bold;
+}
+
+.blog-category,.blog-content{
+    margin-top:1.2rem;
+    color:gray;
+    text-align: justify;
+    letter-spacing: 2px;
+}
+
+/*buttons */
+.blog-button{
+    background-color: var(--bg-dark) !important;
+    color:#FFF;
+}
+.blog-button:hover{
+    content: "";
+    background: var(--main-bg) !important;
+    color:var(--bg-dark) !important;
+    border:1px solid #000;
+    transition: all .5s  ease-in-out;
+}
+
+
+/* status */
+.blog-status{
+    position:fixed;
+    top:-10px;
+    z-index:99;
+
+    transition: all .5s ease-in-out;
+}
+
+
+/* pagination btns */
+.pagination-btn:focus{
+    box-shadow: none;
+}

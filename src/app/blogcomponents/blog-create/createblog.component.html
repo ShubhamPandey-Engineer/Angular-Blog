@@ -1,0 +1,47 @@
+<app-status-alert  [alert]="alert" ></app-status-alert>
+<div class="container-fluid">
+ 
+<div class="create_form ">
+   
+<div class="col-md-8 m-auto p-1" id="create_blog_form">
+<form method="POST" [formGroup]="createBlogForm"  (ngSubmit)="createBlog()"  enctype="application/x-www-form-urlencoded">
+    <div class="page-header ">
+        <label class="header-title">Create Blog</label>
+    </div>
+<div class="row  justify-content-around">
+<div class="col-md-8 ">
+<div class=" form-group">
+<label for="blog_title" class="form-label"    [class.label-error]="fC('title')?.invalid && fC('title')?.dirty">Blog Title</label>
+<input formControlName="title" #title   name="title"   [class.is-invalid]="fC('title')?.invalid && fC('title')?.dirty"   type="text" id="blog_title" class="form-control" placeholder="" >
+<small class="text-danger" *ngIf="fC('title')?.errors?.required && fC('title')?.dirty" >Blog title is required</small>
+</div></div>
+<div class="col-md-8">
+<div class=" form-group">
+<label for="blog_category" class="form-label"  [class.label-error]="fC('category')?.invalid && fC('category')?.dirty">Blog Category</label>
+<input formControlName="category" #category    type="text"  [class.is-invalid]="fC('category')?.invalid && fC('category')?.dirty"  class="form-control" placeholder="" >
+<small class="text-danger" *ngIf="fC('category')?.errors?.required && fC('category')?.dirty">Blog Category is required</small>
+</div></div>
+
+<div class="col-md-8">
+<div class=" form-group ">
+<label for="blog_content" class="form-label"   [class.label-error]="fC('content')?.invalid && fC('content')?.dirty">Blog Content</label>
+<textarea cols="6"  #content   
+ id="blog_content" formControlName="content" class="form-control" rows="5"
+ [class.is-invalid]="fC('content')?.invalid && fC('content')?.dirty"></textarea>
+<div class="d-block" *ngIf="fC('content')?.invalid && fC('content')?.dirty">
+<small  class="text-danger" *ngIf="fC('content')?.errors?.required">Blog Content is required</small>
+<small  class="text-danger"  *ngIf="fC('content')?.errors?.minlength ">Content length is too small</small>
+</div>
+</div></div>
+
+<div class="col-md-8">
+<div class=" form-group text-center ">
+<input type="submit" class="btn blog-button btn-md " name="" [disabled]="formStatus()" value="{{(formStatus())?'Data not filled':'Create Blog'}}">
+</div></div>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
