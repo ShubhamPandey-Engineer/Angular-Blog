@@ -44,7 +44,6 @@ public searchTitle: string = ""
 
 constructor(private blogService: CrudoperationService, private common: CommmonMethods) {
 
-
 }
 
 ngOnInit(): void {

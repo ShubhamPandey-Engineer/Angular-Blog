@@ -21,6 +21,11 @@ app.use(express.urlencoded({extended:false})) // this will parse Content-Type: a
 app.use(express.json())
 app.use(bodyParser.json())
 
+
+var test=(req,res)=>{
+  res.send("dcdcd")
+}
+
 //response object
 const response={
     status:false,
@@ -224,4 +229,4 @@ var deleteBlog=async (req,res)=>{
     
     
 
-module.exports={getBlogs,createBlog,findBlog,updateBlog,deleteBlog}
+module.exports={test,getBlogs,createBlog,findBlog,updateBlog,deleteBlog}

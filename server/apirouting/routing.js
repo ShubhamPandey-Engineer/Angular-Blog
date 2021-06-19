@@ -3,6 +3,7 @@ const router=express.Router();
 //import blogs/ controller
 var operation=require("./controller")
 
+router.route("/").get(operation.test)
 //Home Route -GET
 router.route("/page/:page")
 .get(operation.getBlogs)

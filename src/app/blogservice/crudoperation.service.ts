@@ -39,6 +39,11 @@ create(blog:IBlog):Observable<any>
 return this.http.post(`${this.baseUrl}/create`,blog)
 }
 
+test(){
+  return this.http.get(this.baseUrl)
+
+}
+
 
 
 
